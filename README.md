@@ -1,74 +1,167 @@
-# Getting Started with Create React App
+# Dilemma, Would You Rather Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Summary](#Summary)
 
-In the project directory, you can run:
+- [Technologies](#Technologies)
 
-### `npm start`
+- [Features](#Features)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Testing](#Testing)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Structure](#Structure)
 
-### `npm test`
+- [Usage and Installation](#usage-and-installation)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Summary
 
-### `npm run build`
+Dilemma is a would you rather game made with React/Redux that I built to practice front end programming and React/Redux as part of my udacity nanodegree.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It uses mock data to simulate a user/game server allowing users to be authenticated and keeping track of their answers, questions and score.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It demonstrates my understanding of React and its components,components life cycle, and states. As well as my understanding of Redux and its action creators, actions, reducers, helpers and context providers as well as React Router and its routers, nested navigations, redirection, history and parameterized navigation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies
 
-### `npm run eject`
+React was used for the UI.
+Redux was used for State Management.
+React Router was used for navigational components
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. View and vote on existing questions.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Login/Authenticate as an existing user.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. View all answered/unanswered questions.
 
-## Learn More
+4. View previously answered questions and see your answers.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Error handling in case you navigate to a non-existing question.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. Create a would you rather question for you and other users to vote on.
 
-### Code Splitting
+q. See the leaderboard and see how your score compares with other players.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Testing
 
-### Analyzing the Bundle Size
+User credentials for testing can be found inside src/utils/\_DATA.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Structure
 
-### Making a Progressive Web App
+```
++---public
+|   |   favicon.ico
+|   |   index.html
+|   |   manifest.json
+|   |   robots.txt
+|   |
+\---src
+    |   index.css
+    |   index.js
+    |
+    +---actions
+    |       authedUser.js
+    |       questions.js
+    |       shared.js
+    |       users.js
+    |
+    +---components
+    |       App.js
+    |
+    +---images
+    |   +---avatars
+    |   |       0.png
+    |   |       1.png
+    |   |       2.png
+    |   |       3.png
+    |   |       4.png
+    |   |       5.png
+    |   |       6.png
+    |   |
+    |   \---trophies
+    |           bronze-trophy.png
+    |           gold-trophy.png
+    |           silver-trophy.png
+    |
+    +---middleware
+    |       index.js
+    |       logger.js
+    |
+    +---reducers
+    |       authedUser.js
+    |       index.js
+    |       questions.js
+    |       users.js
+    |
+    \---utils
+            api.js
+            _DATA.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
 
-### Advanced Configuration
+## Usage and Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You can get the project up and running in 3 simple steps.
 
-### Deployment
+1. Use the following command to install the required packages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+npm install
+```
 
-### `npm run build` fails to minify
+2. A. You can either run in development mode using
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+npm start
+```
 
-# Dilemma
+The `_DATA.js` file represents a fake database and methods that let you access the data.
 
-....
+## Data
+
+There are two types of objects stored in our database:
+
+- Users
+- Questions
+
+### Users
+
+Users include:
+
+| Attribute | Type   | Description                                                                                                                                                                                                    |
+| --------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id        | String | The user’s unique identifier                                                                                                                                                                                   |
+| name      | String | The user’s first name and last name                                                                                                                                                                            |
+| avatarURL | String | The path to the image file                                                                                                                                                                                     |
+| questions | Array  | A list of ids of the polling questions this user created                                                                                                                                                       |
+| answers   | Object | The object's keys are the ids of each question this user answered. The value of each key is the answer the user selected. It can be either `'optionOne'` or `'optionTwo'` since each question has two options. |
+
+### Questions
+
+Questions include:
+
+| Attribute | Type   | Description                            |
+| --------- | ------ | -------------------------------------- |
+| id        | String | The question’s unique identifier       |
+| author    | String | The author’s unique identifier         |
+| timestamp | String | The time when the question was created |
+| optionOne | Object | The first voting option                |
+| optionTwo | Object | The second voting option               |
+
+### Voting Options
+
+Voting options are attached to questions. They include:
+
+| Attribute | Type   | Description                                                        |
+| --------- | ------ | ------------------------------------------------------------------ |
+| votes     | Array  | A list that contains the id of each user who voted for that option |
+| text      | String | The text of the option                                             |
+
+The code talks to the database via 4 methods:
+
+- `_getUsers()`
+- `_getQuestions()`
+- `_saveQuestion(question)`
+- `_saveQuestionAnswer(object)`
