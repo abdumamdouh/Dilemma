@@ -16,7 +16,7 @@
 
 ## Summary
 
-Dilemma is a would you rather game made with React/Redux that I built to practice front end programming and React/Redux as part of my udacity nanodegree.
+Dilemma is a would you rather game made with React/Redux
 
 It uses mock data to simulate a user/game server allowing users to be authenticated and keeping track of their answers, questions and score.
 
