@@ -3,7 +3,7 @@ import {
   _getUsers,
   _saveQuestion,
   _saveQuestionAnswer,
-} from './_DATA'
+} from "./_DATA";
 
 export function getInitialData() {
   return Promise.all([_getUsers(), _getQuestions()]).then(
@@ -11,13 +11,16 @@ export function getInitialData() {
       users,
       questions,
     })
-  )
+  );
 }
+
+// formatQuestion({ optionOneText, optionTwoText, author })
 
 export function addNewQuestion(question) {
-  return _saveQuestion(question)
+  return _saveQuestion(question);
 }
 
+//{ authedUser, qid, answer }
 export function saveQuestionAnswer(answer) {
-  return _saveQuestionAnswer(answer)
+  return _saveQuestionAnswer(answer);
 }

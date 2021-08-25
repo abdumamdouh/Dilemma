@@ -1,0 +1,17 @@
+//authenticatedUser
+export const SET_AUTHENTICATED_USER = "SET_AUTHENTICATED_USER"; // login
+export const REMOVE_AUTHENTICATED_USER = "REMOVE_AUTHENTICATED_USER"; // logout
+
+//users
+
+export const RECEIVE_USERS = "RECEIVE_USERS";
+
+//questions
+
+export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
+
+export const ADD_QUESTION = "ADD_QUESTION";
+export const USER_ASSIGN_QUESTION = "USER_ASSIGN_QUESTION";
+
+export const ANSWER_QUESTION = "ANSWER_QUESTION";
+export const USER_ASSIGN_ANSWER = "USER_ASSIGN_ANSWER";
