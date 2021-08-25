@@ -42,7 +42,7 @@ React Router was used for navigational components
 
 6. Create a would you rather question for you and other users to vote on.
 
-q. See the leaderboard and see how your score compares with other players.
+7. See the leaderboard and see how your score compares with other players.
 
 ## Testing
 
