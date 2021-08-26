@@ -12,6 +12,7 @@ import Test from "./components/Test";
 import PageNotFound from "./pages/PageNotFound404";
 import Login from "./pages/Login";
 import NewQuestionForm from "./pages/NewQuestionForm";
+import Leaderboard from "./pages/Leaderboard";
 
 class App extends Component {
   componentDidMount() {
@@ -40,7 +41,7 @@ class App extends Component {
             exact
             name="Leaderboard"
             path="/leaderboard"
-            component={Test}
+            component={Leaderboard}
           />
           <Route
             exact

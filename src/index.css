@@ -590,7 +590,7 @@ body {
   margin-bottom: 60px;
 }
 
-.player {
+.card {
   position: relative;
   margin: auto;
   width: 550px;
@@ -608,7 +608,7 @@ body {
   border-right: 60px solid transparent;
   top: 0;
 }
-.player:nth-child(n + 4) .ribbon {
+.card:nth-child(n + 4) .ribbon {
   display: none;
 }
 
@@ -619,32 +619,32 @@ body {
   top: -52px;
   left: 6px;
 }
-.player:nth-child(1) .ribbon img {
+.card:nth-child(1) .ribbon img {
   content: url("./assets/images/trophies/gold-trophy.png");
 }
-.player:nth-child(2) .ribbon img {
+.card:nth-child(2) .ribbon img {
   content: url("./assets/images/trophies/silver-trophy.png");
 }
-.player:nth-child(3) .ribbon img {
+.card:nth-child(3) .ribbon img {
   content: url("./assets/images/trophies/bronze-trophy.png");
 }
 
-.player-content {
+.card-content {
   padding: 15px 10px 15px 10px;
   border: 2px solid var(--sub-color-primary-accent);
   display: flex;
 }
 
-.player-content > div {
+.card-content > div {
   margin: auto 10px auto 10px;
 }
 
-.player-content .player-image {
+.card-content .card-image {
   margin: auto;
   width: 25%;
 }
 
-.player-image img {
+.card-image img {
   width: auto;
   height: 125px;
   top: 0;
@@ -654,7 +654,7 @@ body {
   margin: auto;
 }
 
-.player-content .content-text {
+.card-content .content-text {
   padding: 0 25px 0 15px;
   border: 2px solid #e6e1e6;
   border-top: 0;
@@ -662,17 +662,17 @@ body {
   width: 55%;
 }
 
-.total-score {
+.totalPoints {
   width: 20%;
 }
 
-.total-score {
+.totalPoints {
   border: 2px solid #e6e1e6;
   margin: auto;
   text-align: center;
 }
 
-.total-score-header {
+.totalPoints-header {
   border-bottom: 2px solid #d8d6d8;
   margin: auto;
   padding: 10px;
@@ -682,7 +682,7 @@ body {
   font-weight: 700;
 }
 
-.score-circle {
+.scoreCir {
   margin: 10px 15px 10px 15px;
   width: 50px;
   height: 50px;
@@ -695,30 +695,30 @@ body {
   background: #565151;
 }
 
-.player:nth-child(1) .score-circle {
+.card:nth-child(1) .scoreCir {
   background: #f1b80d;
 }
-.player:nth-child(2) .score-circle {
+.card:nth-child(2) .scoreCir {
   background: silver;
 }
-.player:nth-child(3) .score-circle {
+.card:nth-child(3) .scoreCir {
   background: #82643c;
 }
 
-.player-name {
+.card-name {
   margin-top: 0;
   text-align: left;
   font-size: 20px;
   font-weight: 700;
 }
 
-.player-stats p {
+.card-stats p {
   font-size: 14px;
   font-weight: 600;
   float: left;
 }
 
-.player-stats p + p {
+.card-stats p + p {
   float: right;
 }
 

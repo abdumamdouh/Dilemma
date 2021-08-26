@@ -4,28 +4,28 @@ import React, { Component } from "react";
 class Card extends Component {
   render() {
     return (
-      <div className="player">
+      <div className="card">
         <div className="ribbon">
           <img alt="trophy" />
         </div>
-        <div className="player-content">
-          <div className="player-image">
+        <div className="card-content">
+          <div className="card-image">
             <img alt="avatar" src="../assets/images/avatars/1.png" />
           </div>
           <div className="content-text">
-            <p className="player-name">name</p>
-            <div className="player-stats">
+            <p className="card-name">name</p>
+            <div className="card-stats">
               <p>Number Of Questions:</p>
               <p>length</p>
             </div>
-            <div className="player-stats">
+            <div className="card-stats">
               <p>Number Of Answers:</p>
               <p>length</p>
             </div>
           </div>
-          <div className="total-score">
-            <div className="total-score-header">Score</div>
-            <div className="score-circle">score</div>
+          <div className="totalPoints">
+            <div className="totalPoints-header">Score</div>
+            <div className="scoreCir">score</div>
           </div>
         </div>
       </div>
