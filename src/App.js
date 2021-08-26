@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { Route, Redirect, Switch } from "react-router";
 
 import Test from "./components/Test";
+import PageNotFound from "./pages/PageNotFound404";
 
 class App extends Component {
   componentDidMount() {
@@ -19,7 +20,6 @@ class App extends Component {
       <>
         <LoadingBar />
         <Header />
-        <h1>Hello World</h1>
         <Switch>
           <Route exact name="login" path="/" component={Test} />
           <Route
@@ -35,7 +35,12 @@ class App extends Component {
             path="/leaderboard"
             component={Test}
           />
-          <Route exact path="/404" name="PageNotFound" component={Test} />
+          <Route
+            exact
+            path="/404"
+            name="PageNotFound"
+            component={PageNotFound}
+          />
           <Redirect to="/404" />
         </Switch>
 

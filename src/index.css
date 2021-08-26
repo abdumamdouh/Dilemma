@@ -1080,3 +1080,17 @@ label {
   padding-left: 10px;
   height: 20px;
 }
+
+/*  */
+
+.content {
+  margin-top: 2rem;
+}
+
+.content__title {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #f50057;
+}
