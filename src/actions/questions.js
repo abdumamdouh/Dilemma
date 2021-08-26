@@ -29,7 +29,7 @@ const userAssignQuestion = ({ authedUser, qid }) => ({
 export const handleQuestionAssignment =
   ({ optionOneText, optionTwoText, author }) =>
   (dispatch) => {
-    showLoading();
+    dispatch(showLoading());
     return _saveQuestion({ optionOneText, optionTwoText, author }).then(
       (question) => {
         dispatch(addQuestion(question));
@@ -54,10 +54,10 @@ const userAssignAnswer = ({ authedUser, qid, answer }) => ({
 export const handleQuestionAnswer =
   ({ authedUser, qid, answer }) =>
   (dispatch) => {
-    showLoading();
+    dispatch(showLoading());
     return _saveQuestionAnswer({ authedUser, qid, answer }).then(() => {
       dispatch(answerQuestion({ authedUser, qid, answer }));
       dispatch(userAssignAnswer({ authedUser, qid, answer }));
-      hideLoading();
+      dispatch(hideLoading());
     });
   };
