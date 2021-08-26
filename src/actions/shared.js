@@ -4,7 +4,7 @@ import { receiveUsers } from "../actions/users";
 import { receiveQuestions } from "../actions/questions";
 import { setAuthedUser } from "../actions/authenticatedUser";
 
-import { showLoading, hideLoading } from "react-redux-loading";
+import { showLoading, hideLoading } from "react-redux-loading-bar";
 
 const AUTHED_ID = "abdulrahmanmamdouh";
 

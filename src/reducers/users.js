@@ -9,7 +9,7 @@ const users = (users = {}, action) => {
     case RECEIVE_USERS: {
       return {
         ...users,
-        ...action.payload,
+        ...action.payload.users,
       };
     }
 
