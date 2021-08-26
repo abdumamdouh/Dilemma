@@ -10,6 +10,8 @@ import { Route, Redirect, Switch } from "react-router";
 
 import Test from "./components/Test";
 import PageNotFound from "./pages/PageNotFound404";
+import Login from "./pages/Login";
+import NewQuestionForm from "./pages/NewQuestionForm";
 
 class App extends Component {
   componentDidMount() {
@@ -21,14 +23,19 @@ class App extends Component {
         <LoadingBar />
         <Header />
         <Switch>
-          <Route exact name="login" path="/" component={Test} />
+          <Route exact name="login" path="/" component={Login} />
           <Route
             exact
             name="Dashboard"
             path="/poll/unanswerd"
             component={Test}
           />
-          <Route exact name="newQuestion" path="/add" component={Test} />
+          <Route
+            exact
+            name="newQuestion"
+            path="/add"
+            component={NewQuestionForm}
+          />
           <Route
             exact
             name="Leaderboard"
