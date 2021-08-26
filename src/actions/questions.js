@@ -15,44 +15,49 @@ export const receiveQuestions = (questions) => ({
   payload: { questions },
 });
 
+// Add Question Actions
 const addQuestion = (question) => ({
   type: ADD_QUESTION,
   payload: { question },
 });
 
-const userAssignQuestion = (question) => ({
+const userAssignQuestion = ({ authedUser, qid }) => ({
   type: USER_ASSIGN_QUESTION,
-  payload: { question },
+  payload: { authedUser, qid },
 });
 
-export const handleQuestionAssignment = (question) => (dispatch) => {
-  showLoading();
-  _saveQuestion(question).then(() => {
-    dispatch(addQuestion(question));
-    dispatch(userAssignAnswer(question));
-    hideLoading();
-  });
-};
+export const handleQuestionAssignment =
+  ({ optionOneText, optionTwoText, author }) =>
+  (dispatch) => {
+    showLoading();
+    return _saveQuestion({ optionOneText, optionTwoText, author }).then(
+      (question) => {
+        dispatch(addQuestion(question));
+        dispatch(userAssignQuestion({ authedUser: author, qid: question.id }));
+        hideLoading();
+      }
+    );
+  };
 
-const answerQuestion = (answer) => ({
+// Answer Question Actions
+
+const answerQuestion = ({ authedUser, qid, answer }) => ({
   type: ANSWER_QUESTION,
-  payload: { answer },
+  payload: { authedUser, qid, answer },
 });
 
-const userAssignAnswer = (answer) => ({
+const userAssignAnswer = ({ authedUser, qid, answer }) => ({
   type: USER_ASSIGN_ANSWER,
-  payload: { answer },
+  payload: { authedUser, qid, answer },
 });
 
-export const handleQuestionAnswer = (question, answer) => (dispatch) => {
-  showLoading();
-  _saveQuestionAnswer({
-    authedUser: question.author,
-    qid: question.id,
-    answer,
-  }).then(() => {
-    dispatch(answerQuestion(answer));
-    dispatch(userAssignAnswer(answer));
-    hideLoading();
-  });
-};
+export const handleQuestionAnswer =
+  ({ authedUser, qid, answer }) =>
+  (dispatch) => {
+    showLoading();
+    return _saveQuestionAnswer({ authedUser, qid, answer }).then(() => {
+      dispatch(answerQuestion({ authedUser, qid, answer }));
+      dispatch(userAssignAnswer({ authedUser, qid, answer }));
+      hideLoading();
+    });
+  };
