@@ -18,7 +18,7 @@ class Header extends Component {
           <li id="logo">
             <img alt="logo" src="/images/logo.png" />
           </li>
-          <NavLink to="/poll/unanswerd">
+          <NavLink to="/poll/unanswered">
             <img alt="tab-img" src="/images/tabs/home.png" />
             Home
           </NavLink>

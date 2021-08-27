@@ -6,7 +6,7 @@ import PageNotFoundGif from "../assets/images/404.gif";
 class PageNotFound404 extends Component {
   render() {
     return (
-      <Container className="data">
+      <Container className="da">
         <div
           style={{
             margin: "auto",

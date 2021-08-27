@@ -11,17 +11,17 @@ class Card extends Component {
         <div className="ribbon">
           <img alt="trophy" />
         </div>
-        <div className="card-content">
+        <div className="card-cont">
           <div className="card-image">
             <img alt="avatar" src={`./images/avatars/${avatarURL}.png`} />
           </div>
-          <div className="content-text">
-            <p className="card-name">{name}</p>
-            <div className="card-stats">
+          <div className="cont-text">
+            <p className="c-name">{name}</p>
+            <div className="c-stats">
               <p>Number Of Questions:</p>
               <p>{NumberOfQuestions}</p>
             </div>
-            <div className="card-stats">
+            <div className="c-stats">
               <p>Number Of Answers:</p>
               <p>{NumberOfAnswers}</p>
             </div>

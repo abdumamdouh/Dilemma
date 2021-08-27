@@ -9,11 +9,12 @@ import { connect } from "react-redux";
 import { Route, Redirect, Switch } from "react-router";
 import ProtectedRoute from "./ProtectedRoute";
 
-import Test from "./components/Test";
 import PageNotFound from "./pages/PageNotFound404";
 import Login from "./pages/Login";
 import NewQuestionForm from "./pages/NewQuestionForm";
 import Leaderboard from "./pages/Leaderboard";
+import Dashboard from "./pages/Dashboard";
+import Test from "./components/Test";
 
 class App extends Component {
   componentDidMount() {
@@ -27,11 +28,25 @@ class App extends Component {
 
         <Switch>
           <Route exact name="login" path="/" component={Login} />
+          <Route
+            exact
+            path="/poll"
+            render={(props) => <Redirect to="poll/unanswered" />}
+          />
+          <Route path="/questions/:questiondID">
+            <Test />
+          </Route>
           <ProtectedRoute
             exact
             name="Dashboard"
-            path="/poll/unanswerd"
-            component={Test}
+            path="/poll/unanswered"
+            component={Dashboard}
+          />
+          <ProtectedRoute
+            exact
+            name="Dashboard"
+            path="/poll/answered"
+            component={Dashboard}
           />
           <ProtectedRoute
             exact

@@ -32,11 +32,11 @@ class NewQuestionForm extends Component {
 
   render() {
     return (
-      <div className="question new-question">
-        <div className="new-question-header">
+      <div className="question new-ques">
+        <div className="new-ques-hea">
           <p>New Question</p>
         </div>
-        <div className="new-question-content">
+        <div className="new-ques-cont">
           <img src={WouldYouRatherGif} alt="wouldYouRather" />
           <form onSubmit={this.handleOnSubmit}>
             <input

@@ -220,12 +220,12 @@ body {
   margin-left: 0;
 }
 
-.questions-list {
+.ques-list {
   padding-top: 15px;
   width: 100%;
 }
 
-.questions-list #no-questions {
+.ques-list #no-ques {
   font-weight: 600;
   text-align: center;
 }
@@ -236,83 +236,83 @@ body {
 /*  Styling Is Based On Item Position  */
 /* =================================== */
 
-.item-content.poll-content {
+.item-cont.poll-cont {
   margin: 15px auto 15px auto;
 }
 
-.questions-list .question:nth-of-type(odd),
+.ques-list .question:nth-of-type(odd),
 .question.color-secondary {
   border: 2px solid var(--main-color-secondary-main);
 }
 
-.questions-list .question:nth-child(even),
+.ques-list .question:nth-child(even),
 .question.color-primary {
   border: 2px solid var(--main-color-primary-main);
 }
 
-.questions-list .question:nth-of-type(odd) .question-header,
+.ques-list .question:nth-of-type(odd) .question-header,
 .question.color-secondary .question-header {
   background-color: var(--main-color-secondary-main);
   border-bottom: 2px solid var(--main-color-secondary-main);
 }
 
-.questions-list .question:nth-child(even) .question-header,
+.ques-list .question:nth-child(even) .question-header,
 .question.color-primary .question-header {
   background-color: var(--main-color-primary-main);
   border-bottom: 2px solid var(--main-color-primary-main);
 }
 
-.questions-list .question:nth-of-type(odd) .content-seperator,
-.question.color-secondary .content-seperator {
+.ques-list .question:nth-of-type(odd) .cont-seperator,
+.question.color-secondary .cont-seperator {
   border-left: 2px solid var(--main-color-secondary-main);
 }
 
-.questions-list .question:nth-child(even) .content-seperator,
-.question.color-primary .content-seperator {
+.ques-list .question:nth-child(even) .cont-seperator,
+.question.color-primary .cont-seperator {
   border-left: 2px solid var(--main-color-primary-main);
 }
 
-.questions-list .question:nth-of-type(odd) .content-text .would-you,
-.question.color-secondary .would-you {
+.ques-list .question:nth-of-type(odd) .cont-text .w-you,
+.question.color-secondary .w-you {
   color: var(--main-color-secondary-text);
 }
 
-.questions-list .question:nth-child(even) .content-text .would-you,
-.question.color-primary .would-you {
+.ques-list .question:nth-child(even) .cont-text .w-you,
+.question.color-primary .w-you {
   color: var(--main-color-primary-text);
 }
 
-.questions-list .question:nth-of-type(odd) .voteBtn,
-.question.color-secondary .voteBtn {
+.ques-list .question:nth-of-type(odd) .voteB,
+.question.color-secondary .voteB {
   border: 2px solid #cfe7d6;
   background-color: #e4ffe5;
   color: var(--main-color-secondary-main);
 }
 
-.questions-list .question:nth-child(even) .voteBtn,
-.question.color-primary .voteBtn {
+.ques-list .question:nth-child(even) .voteB,
+.question.color-primary .voteB {
   border: 2px solid #cfdde7;
   background-color: #e4f4ff;
   color: var(--main-color-primary-main);
 }
 
-.questions-list .question:nth-of-type(odd) .voteBtn:hover,
-.question.color-secondary .voteBtn:hover {
+.ques-list .question:nth-of-type(odd) .voteB:hover,
+.question.color-secondary .voteB:hover {
   background-color: #d1ffd6;
 }
 
-.questions-list .question:nth-of-type(odd) .voteBtn:active,
-.question.color-secondary .voteBtn:active {
+.ques-list .question:nth-of-type(odd) .voteB:active,
+.question.color-secondary .voteB:active {
   background-color: #abffb4;
 }
 
-.questions-list .question:nth-of-type(even) .voteBtn:hover,
-.question.color-primary .voteBtn:hover {
+.ques-list .question:nth-of-type(even) .voteB:hover,
+.question.color-primary .voteB:hover {
   background-color: #d1e8ff;
 }
 
-.questions-list .question:nth-of-type(even) .voteBtn:active,
-.question.color-primary .voteBtn:active {
+.ques-list .question:nth-of-type(even) .voteB:active,
+.question.color-primary .voteB:active {
   background-color: #94c9ff;
 }
 
@@ -329,7 +329,7 @@ body {
   box-shadow: 0 10px 11px -5px rgba(0, 0, 0, 0.39);
 }
 
-.questions-list .question {
+.ques-list .question {
   width: 470px;
 }
 
@@ -358,7 +358,7 @@ body {
   margin: 0;
 }
 
-.item-content {
+.item-cont {
   display: flex;
   margin: 20px auto 20px auto;
   min-height: 18vh;
@@ -368,12 +368,12 @@ body {
   margin: 10px auto 10px auto;
 }
 
-.content-image {
+.cont-image {
   width: 40%;
   position: relative;
 }
 
-.content-image img {
+.cont-image img {
   width: auto;
   height: 125px;
   position: absolute;
@@ -388,19 +388,19 @@ body {
   margin: 2% 0 2% 0;
 }
 
-.content-text {
+.cont-text {
   text-align: center;
   margin: auto;
   width: 80%;
 }
 
-.content-text .would-you {
+.cont-text .w-you {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 10px 0;
 }
 
-.content-text label {
+.cont-text label {
   font-size: 14px;
   font-weight: 600;
   color: #9ca1a6;
@@ -411,13 +411,13 @@ body {
   text-align: center;
 }
 
-.content-text input[type="radio"] {
+.cont-text input[type="radio"] {
   opacity: 0;
   position: fixed;
   width: 0;
 }
 
-.content-text input[type="radio"] + *::before {
+.cont-text input[type="radio"] + *::before {
   content: "";
   display: inline-block;
   vertical-align: bottom;
@@ -430,15 +430,15 @@ body {
   border-color: gray;
 }
 
-.question.color-primary .content-text input[type="radio"]:checked + * {
+.question.color-primary .cont-text input[type="radio"]:checked + * {
   color: var(--main-color-primary-text);
 }
 
-.question.color-secondary .content-text input[type="radio"]:checked + * {
+.question.color-secondary .cont-text input[type="radio"]:checked + * {
   color: var(--main-color-secondary-text);
 }
 
-.content-text input[type="radio"]:checked + *::before {
+.cont-text input[type="radio"]:checked + *::before {
   background: radial-gradient(
     var(--main-color-primary-radio) 0%,
     var(--main-color-primary-radio) 40%,
@@ -448,7 +448,7 @@ body {
   border-color: var(--main-color-primary-radio);
 }
 
-.question.color-primary .content-text input[type="radio"]:checked + *::before {
+.question.color-primary .cont-text input[type="radio"]:checked + *::before {
   background: radial-gradient(
     var(--main-color-primary-radio) 0%,
     var(--main-color-primary-radio) 40%,
@@ -458,10 +458,7 @@ body {
   border-color: var(--main-color-primary-radio);
 }
 
-.question.color-secondary
-  .content-text
-  input[type="radio"]:checked
-  + *::before {
+.question.color-secondary .cont-text input[type="radio"]:checked + *::before {
   background: radial-gradient(
     var(--main-color-secondary-radio) 0%,
     var(--main-color-secondary-radio) 40%,
@@ -471,7 +468,7 @@ body {
   border-color: var(--main-color-secondary-radio);
 }
 
-.voteBtn {
+.voteB {
   cursor: pointer;
   border-radius: 6px;
   font-size: 15px;
@@ -481,7 +478,7 @@ body {
   margin-top: 10px;
 }
 
-.voteBtn:focus {
+.voteB:focus {
   outline: 0;
 }
 
@@ -489,7 +486,7 @@ body {
 /*          Answer Form Style          */
 /* =================================== */
 
-.content-text .choice-percentage {
+.cont-text .choice-per {
   font-size: 12px;
   padding: 5px;
   font-weight: 800;
@@ -541,7 +538,7 @@ body {
   box-shadow: 0 0 22px var(--main-color-secondary-main);
 }
 
-.progress {
+.prog {
   height: 1.5em;
   width: 90%;
   position: relative;
@@ -550,16 +547,16 @@ body {
   margin: auto;
 }
 
-.question.color-primary .progress {
+.question.color-primary .prog {
   background-color: var(--main-color-primary-minor);
   color: var(--main-color-primary-text);
 }
-.question.color-secondary .progress {
+.question.color-secondary .prog {
   background-color: var(--main-color-secondary-minor);
   color: var(--main-color-secondary-text);
 }
 
-.progress:before {
+.prog:before {
   content: attr(data-label);
   font-size: 0.8em;
   position: absolute;
@@ -570,15 +567,15 @@ body {
   line-height: 1;
 }
 
-.progress .value {
+.prog .value {
   display: inline-block;
   height: 100%;
 }
 
-.question.color-primary .progress .value {
+.question.color-primary .prog .value {
   background-color: var(--main-color-primary-main);
 }
-.question.color-secondary .progress .value {
+.question.color-secondary .prog .value {
   background-color: var(--main-color-secondary-main);
 }
 
@@ -630,17 +627,17 @@ body {
   content: url("./assets/images/trophies/bronze-trophy.png");
 }
 
-.card-content {
+.card-cont {
   padding: 15px 10px 15px 10px;
   border: 2px solid var(--sub-color-primary-accent);
   display: flex;
 }
 
-.card-content > div {
+.card-cont > div {
   margin: auto 10px auto 10px;
 }
 
-.card-content .card-image {
+.card-cont .card-image {
   margin: auto;
   width: 25%;
 }
@@ -655,7 +652,7 @@ body {
   margin: auto;
 }
 
-.card-content .content-text {
+.card-cont .cont-text {
   padding: 0 25px 0 15px;
   border: 2px solid #e6e1e6;
   border-top: 0;
@@ -706,20 +703,20 @@ body {
   background: #82643c;
 }
 
-.card-name {
+.c-name {
   margin-top: 0;
   text-align: left;
   font-size: 20px;
   font-weight: 700;
 }
 
-.card-stats p {
+.c-stats p {
   font-size: 14px;
   font-weight: 600;
   float: left;
 }
 
-.card-stats p + p {
+.c-stats p + p {
   float: right;
 }
 
@@ -794,7 +791,7 @@ label {
   width: 50%;
 }
 
-.log-content .content-seperator {
+.log-content .cont-seperator {
   height: 465px;
   border-left: 2px solid var(--sub-color-primary-accent);
 }
@@ -958,7 +955,7 @@ label {
 /*          New Question Style           */
 /* ===================================== */
 
-.new-question {
+.new-ques {
   margin-top: 30px;
   background-color: var(--sub-color-primary-main);
   color: var(--sub-color-primary-text);
@@ -966,29 +963,29 @@ label {
   text-align: center;
 }
 
-.new-question-header {
+.new-ques-hea {
   width: 100%;
   border-bottom: 2px solid var(--sub-color-primary-accent);
 }
 
-.new-question-header p {
+.new-ques-hea p {
   font-size: 28px;
   font-weight: 700;
   margin: 0;
   padding: 10px 0 10px 0;
 }
 
-.new-question-content img {
+.new-ques-cont img {
   width: 150px;
 }
 
-.new-question-content p {
+.new-ques-cont p {
   font-size: 17px;
   font-weight: 700;
   margin: 0;
 }
 
-.new-question-content input {
+.new-ques-cont input {
   width: 93%;
   border: 2px solid var(--sub-color-primary-accent);
   border-radius: 7px;
@@ -1000,11 +997,11 @@ label {
   color: #646464;
 }
 
-.new-question-content input::placeholder {
+.new-ques-cont input::placeholder {
   color: #9b9b9b;
 }
 
-.new-question-content input:focus {
+.new-ques-cont input:focus {
   outline: 0;
 }
 
@@ -1085,7 +1082,7 @@ label {
 
 /*  */
 
-.data {
+.da {
   margin-top: 2rem;
 }
 
