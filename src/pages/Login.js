@@ -12,7 +12,11 @@ class Login extends Component {
   handleSignIn = () => {
     // console.log(this.state);
     const { userID } = this.state;
-    this.props.dispatch(setAuthedUser(userID));
+    if (!userID) {
+      alert("select user to sign in!");
+    } else {
+      this.props.dispatch(setAuthedUser(userID));
+    }
   };
   render() {
     const { users } = this.props;
@@ -23,11 +27,15 @@ class Login extends Component {
             <p className="log-heading signin">Sign In</p>
             <p>Choose your username from below</p>
             <select
+              required
               name="users"
               id="users"
               value={this.state.value}
               onChange={(e) => this.setState({ userID: e.target.value })}
             >
+              <option value="" disabled selected hidden>
+                Select User
+              </option>
               {users.map((user) => (
                 <option value={user.id}>{user.name}</option>
               ))}
