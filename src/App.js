@@ -13,6 +13,7 @@ import PageNotFound from "./pages/PageNotFound404";
 import Login from "./pages/Login";
 import NewQuestionForm from "./pages/NewQuestionForm";
 import Leaderboard from "./pages/Leaderboard";
+import Dashboard from "./pages/Dashboard";
 
 class App extends Component {
   componentDidMount() {
