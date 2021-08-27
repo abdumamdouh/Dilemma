@@ -47,7 +47,7 @@ class Header extends Component {
     );
   }
 }
-//src={`../assets/images/avatars/${users[authedUser].avatarURL}`}
+
 const mapStateToProps = ({ authedUser, users }) => {
   return {
     logout: authedUser === null,

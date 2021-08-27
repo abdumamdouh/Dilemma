@@ -2,10 +2,32 @@ import React, { Component } from "react";
 
 import WouldYouRatherGif from "../assets/images/would-you.gif";
 
+import { connect } from "react-redux";
+import { handleQuestionAssignment } from "../actions/questions";
+
 class NewQuestionForm extends Component {
   state = {
-    questionOne: "",
-    questionTwo: "",
+    q1: "",
+    q2: "",
+  };
+
+  handleOnChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  handleOnSubmit = (e) => {
+    e.preventDefault();
+    const { q1, q2 } = this.state;
+    const { authedUser } = this.props;
+    this.props.dispatch(
+      handleQuestionAssignment({
+        optionOneText: q1,
+        optionTwoText: q2,
+        author: authedUser,
+      })
+    );
   };
 
   render() {
@@ -16,21 +38,23 @@ class NewQuestionForm extends Component {
         </div>
         <div className="new-question-content">
           <img src={WouldYouRatherGif} alt="wouldYouRather" />
-          <form onSubmit={() => console.log("hi")}>
+          <form onSubmit={this.handleOnSubmit}>
             <input
               type="text"
               id="q1"
               name="q1"
+              value={this.state.q1}
               placeholder="first question"
-              onChange={() => console.log("hi")}
+              onChange={this.handleOnChange}
             />
 
             <input
               type="text"
               id="q2"
               name="q2"
+              value={this.state.q2}
               placeholder="second question"
-              onChange={() => console.log("hi")}
+              onChange={this.handleOnChange}
             />
             <input type="submit" value="Submit" id="submit" />
           </form>
@@ -40,4 +64,10 @@ class NewQuestionForm extends Component {
   }
 }
 
-export default NewQuestionForm;
+const mapStateToProps = ({ authedUser }) => {
+  return {
+    authedUser,
+  };
+};
+
+export default connect(mapStateToProps)(NewQuestionForm);
