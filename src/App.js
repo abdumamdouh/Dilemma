@@ -7,13 +7,13 @@ import { handleInitialData } from "./actions/shared";
 import { connect } from "react-redux";
 
 import { Route, Redirect, Switch } from "react-router";
+import ProtectedRoute from "./ProtectedRoute";
 
 import Test from "./components/Test";
 import PageNotFound from "./pages/PageNotFound404";
 import Login from "./pages/Login";
 import NewQuestionForm from "./pages/NewQuestionForm";
 import Leaderboard from "./pages/Leaderboard";
-import Dashboard from "./pages/Dashboard";
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +24,7 @@ class App extends Component {
       <>
         <LoadingBar />
         <Header />
+
         <Switch>
           <Route exact name="login" path="/" component={Login} />
           <Route
