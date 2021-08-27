@@ -34,7 +34,7 @@ export const handleQuestionAssignment =
       (question) => {
         dispatch(addQuestion(question));
         dispatch(userAssignQuestion({ authedUser: author, qid: question.id }));
-        hideLoading();
+        dispatch(hideLoading());
       }
     );
   };
