@@ -3,7 +3,13 @@ import { NavLink } from "react-router-dom";
 
 import { connect } from "react-redux";
 
+import { removeAuthedUser } from "../actions/authenticatedUser";
+
 class Header extends Component {
+  handleLogOut = () => {
+    this.props.dispatch(removeAuthedUser());
+  };
+
   render() {
     const { logout, users, authedUser } = this.props;
     return (
@@ -34,7 +40,7 @@ class Header extends Component {
                   : `./images/avatars/${users[authedUser].avatarURL}.png`
               }
             />
-            <button onClick={() => console.log("hi")}>Logout</button>
+            <button onClick={this.handleLogOut}>Logout</button>
           </li>
         </ul>
       </div>

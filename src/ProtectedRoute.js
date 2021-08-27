@@ -3,14 +3,14 @@ import { Redirect, Route } from "react-router";
 
 import { connect } from "react-redux";
 
-const ProtectedRoute = ({ component: Component, exact, path }) => {
+const ProtectedRoute = ({ component: Component, exact, path, logout }) => {
   return (
     <Route
       exact={exact}
       path={path}
       render={(props) =>
         // this.props.authedUser
-        true ? (
+        !logout ? (
           <Component {...props} />
         ) : (
           <Redirect
@@ -27,4 +27,10 @@ const ProtectedRoute = ({ component: Component, exact, path }) => {
   );
 };
 
-export default connect()(ProtectedRoute);
+const mapStateToProps = ({ authedUser }) => {
+  return {
+    logout: authedUser === null,
+  };
+};
+
+export default connect(mapStateToProps)(ProtectedRoute);

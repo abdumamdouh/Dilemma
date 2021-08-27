@@ -27,19 +27,19 @@ class App extends Component {
 
         <Switch>
           <Route exact name="login" path="/" component={Login} />
-          <Route
+          <ProtectedRoute
             exact
             name="Dashboard"
             path="/poll/unanswerd"
             component={Test}
           />
-          <Route
+          <ProtectedRoute
             exact
             name="newQuestion"
             path="/add"
             component={NewQuestionForm}
           />
-          <Route
+          <ProtectedRoute
             exact
             name="Leaderboard"
             path="/leaderboard"
