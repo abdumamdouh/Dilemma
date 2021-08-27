@@ -8,7 +8,9 @@ class Leaderboard extends Component {
     console.log(this.props.sortedUsers);
     return (
       <div className="leaderbo">
-        <Card />
+        {this.props.sortedUsers.map((user) => (
+          <Card key={user.id} user={user} />
+        ))}
       </div>
     );
   }
