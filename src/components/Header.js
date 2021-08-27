@@ -40,7 +40,17 @@ class Header extends Component {
                   : `./images/avatars/${users[authedUser].avatarURL}.png`
               }
             />
-            <button onClick={this.handleLogOut}>Logout</button>
+            <button
+              className="logout-button"
+              onClick={this.handleLogOut}
+              style={{
+                padding: "8px",
+                marginLeft: "10px",
+                background: "#E6E1E6",
+              }}
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </div>

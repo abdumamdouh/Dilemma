@@ -1096,3 +1096,9 @@ label {
   align-items: flex-end;
   color: #f50057;
 }
+
+.logout-button:hover {
+  border: 1px white solid;
+  padding: "8px";
+  margin-left: "10px";
+}
