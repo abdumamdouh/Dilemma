@@ -4,7 +4,7 @@ import Card from "../components/Card";
 class Leaderboard extends Component {
   render() {
     return (
-      <div className="leaderboard">
+      <div className="leaderbo">
         <Card />
       </div>
     );

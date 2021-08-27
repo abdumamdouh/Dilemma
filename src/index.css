@@ -586,7 +586,8 @@ body {
 /*          Leaderboard Style            */
 /* ===================================== */
 
-.leaderboard {
+.leaderbo {
+  margin-top: 20px;
   margin-bottom: 60px;
 }
 
@@ -723,10 +724,10 @@ body {
 }
 
 /* ===================================== */
-/*              Login Style              */
+/*              log Style              */
 /* ===================================== */
 
-.login {
+.log {
   margin: auto;
   width: 850px;
   overflow: auto;
@@ -739,17 +740,17 @@ body {
   box-shadow: 0 10px 11px -5px rgba(0, 0, 0, 0.39);
 }
 
-.login p,
+.log p,
 label {
   color: var(--sub-color-primary-text);
 }
-.login-header {
+.log-header {
   background-color: var(--sub-color-primary-minor);
   width: 100%;
   border-radius: 4px 4px 0 0;
 }
 
-.login-header p {
+.log-header p {
   color: var(--sub-color-primary-text);
   font-size: 16px;
   font-weight: 700;
@@ -757,13 +758,13 @@ label {
   padding: 10px 0 3px 0;
 }
 
-.login-header p + p {
+.log-header p + p {
   font-size: 14px;
   font-weight: 500;
   padding: 3px 0 10px 0;
 }
 
-#login-form p + p {
+#log-form p + p {
   font-weight: 600;
   margin: 0;
 }
@@ -773,51 +774,51 @@ label {
   font-weight: 600;
 }
 
-#login-form p + p + p {
+#log-form p + p + p {
   font-weight: 500;
   margin-bottom: 5px;
 }
 
-#login-form > .user-info {
+#log-form > .user-info {
   width: 87%;
 }
-.login-content {
+.log-content {
   padding: 10px 0 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.login-content > span {
+.log-content > span {
   line-height: 41px;
   width: 50%;
 }
 
-.login-content .content-seperator {
+.log-content .content-seperator {
   height: 465px;
   border-left: 2px solid var(--sub-color-primary-accent);
 }
 
-.login-content .login-heading {
+.log-content .log-heading {
   margin: 0.6rem;
   margin-top: 0;
   font-size: 25px;
   font-weight: 700;
 }
 
-.login-content .login-heading.signin {
+.log-content .log-heading.signin {
   color: var(--main-color-secondary-main);
 }
 
-.login-content .login-heading.signup {
+.log-content .log-heading.signup {
   color: var(--main-color-primary-main);
 }
 
-.login-content img {
+.log-content img {
   width: 150px;
 }
 
-.login-content select {
+.log-content select {
   padding: 5px;
   border: 2px solid var(--sub-color-primary-accent);
   border-radius: 7px;
@@ -828,7 +829,7 @@ label {
   color: var(--sub-color-primary-text);
 }
 
-.login-content select:focus {
+.log-content select:focus {
   outline: 0;
 }
 
