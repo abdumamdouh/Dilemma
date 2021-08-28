@@ -1,23 +1,29 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link, withRouter, Redirect } from "react-router-dom";
-import { handleAnswerQuestion } from "../actions/questions";
+import { handleQuestionAnswer } from "../actions/questions";
+
 class Question extends Component {
   state = {
     option: "optionOne",
   };
-  calculateVotes = (votes, totalVotes) => {
+  calcVotes = (votes, totalVotes) => {
     return Math.round((votes / totalVotes) * 100);
   };
-  handleChange = (e) => {
-    const element = e.target;
-    this.setState({ option: element.value });
+  handChange = (event) => {
+    const el = event.target;
+    this.setState({ option: el.value });
   };
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { dispatch, question } = this.props;
-    // dispatch(handleAnswerQuestion(question.id, this.state.option));
+  handSubmit = (event) => {
+    event.preventDefault();
+    const { question, authedUser } = this.props;
+    this.props.dispatch(
+      handleQuestionAnswer({
+        authedUser,
+        qid: question.id,
+        answer: this.state.option,
+      })
+    );
   };
   render() {
     if (this.props.not_found) {
@@ -55,7 +61,7 @@ class Question extends Component {
                   <label>{optionOne.text}</label>
                   <div
                     className="prog"
-                    data-label={`${this.calculateVotes(
+                    data-label={`${this.calcVotes(
                       optionOne.votes.length,
                       totalVotes
                     )}% Complete`}
@@ -64,10 +70,8 @@ class Question extends Component {
                       className="value"
                       style={{
                         width:
-                          this.calculateVotes(
-                            optionOne.votes.length,
-                            totalVotes
-                          ) + "%",
+                          this.calcVotes(optionOne.votes.length, totalVotes) +
+                          "%",
                       }}
                     ></span>
                   </div>
@@ -83,7 +87,7 @@ class Question extends Component {
                   <label>{optionTwo.text}</label>
                   <div
                     className="prog"
-                    data-label={`${this.calculateVotes(
+                    data-label={`${this.calcVotes(
                       optionTwo.votes.length,
                       totalVotes
                     )}% Complete`}
@@ -92,10 +96,8 @@ class Question extends Component {
                       className="value"
                       style={{
                         width:
-                          this.calculateVotes(
-                            optionTwo.votes.length,
-                            totalVotes
-                          ) + "%",
+                          this.calcVotes(optionTwo.votes.length, totalVotes) +
+                          "%",
                       }}
                     ></span>
                   </div>
@@ -103,13 +105,13 @@ class Question extends Component {
                 </div>
               </form>
             ) : (
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handSubmit}>
                 <input
                   type="radio"
                   id="optionOne"
                   name="option"
                   value="optionOne"
-                  onChange={this.handleChange}
+                  onChange={this.handChange}
                   defaultChecked
                 />
                 <label htmlFor="optionOne">{optionOne.text}</label>
@@ -118,7 +120,7 @@ class Question extends Component {
                   id="optionTwo"
                   name="option"
                   value="optionTwo"
-                  onChange={this.handleChange}
+                  onChange={this.handChange}
                 />
                 <label htmlFor="optionTwo">{optionTwo.text}</label>
                 <input type="submit" value="Submit Vote" className="voteB" />
@@ -130,13 +132,6 @@ class Question extends Component {
     );
   }
 }
-
-Question.propTypes = {
-  question: PropTypes.object.isRequired,
-  user: PropTypes.object.isRequired,
-  answered: PropTypes.bool.isRequired,
-  authedUser: PropTypes.string.isRequired,
-};
 
 function mapStateToProps({ questions, users, authedUser }, { match }) {
   const id = match.params.questiondID;
