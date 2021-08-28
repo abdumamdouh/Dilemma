@@ -24,8 +24,8 @@ const questions = (questions = {}, action) => {
         [qid]: {
           ...questions[qid],
           [answer]: {
-            ...questions[qid.answer],
-            votes: [...questions[qid.answer.votes], authedUser],
+            ...questions[qid][answer],
+            votes: [...questions[qid][answer].votes, authedUser],
           },
         },
       };
