@@ -14,7 +14,7 @@ import Login from "./pages/Login";
 import NewQuestionForm from "./pages/NewQuestionForm";
 import Leaderboard from "./pages/Leaderboard";
 import Dashboard from "./pages/Dashboard";
-import Test from "./components/Test";
+import Question from "./components/Question";
 
 class App extends Component {
   componentDidMount() {
@@ -33,7 +33,7 @@ class App extends Component {
             path="/poll"
             render={(props) => <Redirect to="poll/unanswered" />}
           />
-          <ProtectedRoute path="/questions/:questiondID" component={Test} />
+          <ProtectedRoute path="/questions/:questiondID" component={Question} />
           <ProtectedRoute
             exact
             name="Dashboard"
