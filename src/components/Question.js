@@ -134,9 +134,9 @@ class Question extends Component {
 }
 
 function mapStateToProps({ questions, users, authedUser }, { match }) {
-  const id = match.params.questiondID;
-  const question = questions[id];
-  let answered = false;
+  const i = match.params.questiondID;
+  const question = questions[i];
+  let ans = false;
   const not_found = true;
   if (question === undefined) {
     return {
@@ -147,14 +147,14 @@ function mapStateToProps({ questions, users, authedUser }, { match }) {
       question.optionOne.votes.includes(authedUser) ||
       question.optionTwo.votes.includes(authedUser)
     ) {
-      answered = true;
+      ans = true;
     }
   }
   const user = users[question.author];
   return {
     question,
     user,
-    answered,
+    answered: ans,
     authedUser,
   };
 }
