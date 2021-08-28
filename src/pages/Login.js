@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { setAuthedUser } from "../actions/authenticatedUser";
-
 import { withRouter } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 class Login extends Component {
   state = {
@@ -46,11 +46,13 @@ class Login extends Component {
               value={this.state.value}
               onChange={(e) => this.setState({ userID: e.target.value })}
             >
-              <option value="" disabled selected hidden>
+              <option value="" disabled hidden>
                 Select User
               </option>
               {users.map((user) => (
-                <option value={user.id}>{user.name}</option>
+                <option value={user.id} key={uuidv4()}>
+                  {user.name}
+                </option>
               ))}
             </select>
             <button id="sign-in" onClick={this.handleSignIn}>
