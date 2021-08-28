@@ -22,11 +22,11 @@ class Login extends Component {
 
       // console.log(this.props);
 
-      const fromObj = this.props.location.state.from || {
-        pathname: "poll/unanswered",
+      const fromObj = this.props.location.state || {
+        from: { pathname: "poll/unanswered" },
       };
 
-      const path = fromObj.pathname;
+      const path = fromObj.from.pathname;
       this.props.history.push(path);
     }
   };
