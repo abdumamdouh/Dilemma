@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 
 import { setAuthedUser } from "../actions/authenticatedUser";
 
+import { withRouter } from "react-router-dom";
+
 class Login extends Component {
   state = {
     userID: "",
@@ -16,10 +18,21 @@ class Login extends Component {
       alert("select user to sign in!");
     } else {
       this.props.dispatch(setAuthedUser(userID));
+      // enforce to redirect to the home page route after sign in
+
+      // console.log(this.props);
+
+      const fromObj = this.props.location.state.from || {
+        pathname: "poll/unanswered",
+      };
+
+      const path = fromObj.pathname;
+      this.props.history.push(path);
     }
   };
   render() {
     const { users } = this.props;
+    // console.log(this.props);
     return (
       <div className="log">
         <div className="log-content">
@@ -56,4 +69,4 @@ const mapStateToProps = ({ users }) => {
   };
 };
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(withRouter(Login));

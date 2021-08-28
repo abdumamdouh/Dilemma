@@ -14,6 +14,8 @@ const ProtectedRoute = ({ component: Component, exact, path, logout }) => {
           <Component {...props} />
         ) : (
           <Redirect
+            // to property pass info to be used in withRouter props
+            // we will pass from state represnts the location of the current route
             to={{
               pathname: "/",
               state: {
