@@ -33,9 +33,7 @@ class App extends Component {
             path="/poll"
             render={(props) => <Redirect to="poll/unanswered" />}
           />
-          <Route path="/questions/:questiondID">
-            <Test />
-          </Route>
+          <ProtectedRoute path="/questions/:questiondID" component={Test} />
           <ProtectedRoute
             exact
             name="Dashboard"

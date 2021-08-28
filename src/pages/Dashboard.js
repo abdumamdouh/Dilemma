@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 import { Switch, Route, NavLink } from "react-router-dom";
 
-import Test from "../components/Test";
+import Questions from "../components/Questions";
+
+import { connect } from "react-redux";
 
 class Dashboard extends Component {
   render() {
@@ -28,10 +30,10 @@ class Dashboard extends Component {
             {/*  */}
             <Switch>
               <Route path="/poll/answered">
-                <Test questions={this.props.answeredQuestions} />
+                <Questions questions={this.props.answeredQuestions} />
               </Route>
               <Route path="/poll/unanswered">
-                <Test questions={this.props.unAnsweredQuestions} />
+                <Questions questions={this.props.unAnsweredQuestions} />
               </Route>
             </Switch>
           </div>
@@ -43,6 +45,35 @@ class Dashboard extends Component {
   }
 }
 
+const mapStateToProps = ({ authedUser, users, questions }) => {
+  //extract all user [authedUser] answered questions ids from users database
+  const answeredQuestionsIds = Object.keys(users[authedUser].answers);
+
+  //extract all questions objects from questions database into array
+  const questionsArr = Object.values(questions);
+
+  //split questions into two categories: answered and unanswered for the authedUser
+
+  const answeredQuestions = questionsArr
+    .filter((question) => answeredQuestionsIds.includes(question.id))
+    .map((question) => Object.assign({}, question, { type: "answered" }))
+    .sort((a, b) => {
+      return b.timestamp - a.timestamp;
+    });
+
+  const unAnsweredQuestions = questionsArr
+    .filter((question) => !answeredQuestionsIds.includes(question.id))
+    .map((question) => Object.assign({}, question, { type: "answered" }))
+    .sort((a, b) => {
+      return b.timestamp - a.timestamp;
+    });
+
+  return {
+    answeredQuestions,
+    unAnsweredQuestions,
+  };
+};
+
 // <Test questions={this.props.answeredQuestions} />
 
-export default Dashboard;
+export default connect(mapStateToProps)(Dashboard);
