@@ -5,6 +5,8 @@ import WouldYouRatherGif from "../assets/images/would-you.gif";
 import { connect } from "react-redux";
 import { handleQuestionAssignment } from "../actions/questions";
 
+import { withRouter } from "react-router-dom";
+
 class NewQuestionForm extends Component {
   state = {
     q1: "",
@@ -28,6 +30,8 @@ class NewQuestionForm extends Component {
         author: authedUser,
       })
     );
+
+    this.props.history.push("/poll/unanswered");
   };
 
   render() {
@@ -70,4 +74,4 @@ const mapStateToProps = ({ authedUser }) => {
   };
 };
 
-export default connect(mapStateToProps)(NewQuestionForm);
+export default connect(mapStateToProps)(withRouter(NewQuestionForm));
