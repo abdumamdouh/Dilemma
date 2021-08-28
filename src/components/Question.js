@@ -34,7 +34,7 @@ class Question extends Component {
           </Link>
           <p>{answered ? "Asked by " + user.name : user.name + " Asks"}</p>
         </div>
-        <div className={`item-content${answered ? " answer-content" : ""}`}>
+        <div className={`item-cont${answered ? " answer-content" : ""}`}>
           <div className="cont-image">
             <img alt="avatar" src={`/images/avatars/${user.avatarURL}.png`} />
           </div>
@@ -121,7 +121,7 @@ class Question extends Component {
                   onChange={this.handleChange}
                 />
                 <label htmlFor="optionTwo">{optionTwo.text}</label>
-                <input type="submit" value="Submit Vote" className="voteBtn" />
+                <input type="submit" value="Submit Vote" className="voteB" />
               </form>
             )}
           </div>
