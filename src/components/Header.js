@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 import { connect } from "react-redux";
 
@@ -8,6 +8,7 @@ import { removeAuthedUser } from "../actions/authenticatedUser";
 class Header extends Component {
   handleLogOut = () => {
     this.props.dispatch(removeAuthedUser());
+    this.props.history.push("/");
   };
 
   render() {
@@ -66,4 +67,4 @@ const mapStateToProps = ({ authedUser, users }) => {
   };
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(withRouter(Header));
