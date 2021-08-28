@@ -4,6 +4,7 @@ import QuestionItem from "./QuestionItem.js";
 class Questions extends Component {
   render() {
     const { questions } = this.props;
+    console.log(this.props.questions);
 
     return (
       <div className="ques-list">

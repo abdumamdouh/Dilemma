@@ -7,6 +7,7 @@ class QuestionItem extends Component {
   render() {
     const { user } = this.props;
     const { id, optionOne, type } = this.props.question;
+    console.log(this.props.user);
     return (
       <div className="question">
         <div className="question-header">
@@ -33,4 +34,14 @@ class QuestionItem extends Component {
   }
 }
 
-export default connect()(QuestionItem);
+// select users from state tree and question from component props
+
+const mapStateToProps = ({ users }, { question }) => {
+  const user = users[question.author];
+
+  return {
+    user,
+  };
+};
+
+export default connect(mapStateToProps)(QuestionItem);
